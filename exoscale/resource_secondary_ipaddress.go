@@ -153,8 +153,7 @@ func getSecondaryIP(d *schema.ResourceData, meta interface{}) (*egoscale.NicSeco
 		}
 
 		var errUUID error
-		nic = infos[0]
-		nicID, errUUID := egoscale.ParseUUID(nic)
+		nicID, errUUID := egoscale.ParseUUID(infos[0])
 		if errUUID != nil {
 			return nil, errUUID
 		}
