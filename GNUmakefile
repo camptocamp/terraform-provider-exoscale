@@ -3,11 +3,12 @@ TEST?=./...
 GOFMT_FILES?=$$(find . -name '*.go' |grep -v vendor)
 PKG_NAME=exoscale
 WEBSITE_REPO=github.com/hashicorp/terraform-website
+GOLANGCI_LINT_VERSION=1.11.1
 
 default: build
 
 build: fmtcheck
-	go install
+	go install -mod vendor
 
 sweep:
 	@echo "WARNING: This will destroy infrastructure. Use only in development accounts."
@@ -28,17 +29,16 @@ fmtcheck:
 
 lint:
 	@echo "==> Checking source code against linters..."
-	@golangci-lint run ./$(PKG_NAME)
+	@bin/golangci-lint run ./$(PKG_NAME)
 
 tools:
-	go get -u github.com/golang/dep/cmd/dep
-	go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+	curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v$(GOLANGCI_LINT_VERSION)
 
 errcheck:
 	@sh -c "'$(CURDIR)/scripts/errcheck.sh'"
 
 vendor-status:
-	@dep check
+	@go mod verify
 
 test-compile:
 	@if [ "$(TEST)" = "./..." ]; then \

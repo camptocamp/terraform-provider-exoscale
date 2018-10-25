@@ -4,10 +4,11 @@ services:
 - docker
 language: go
 go:
-- "1.9.x"
-- "1.10.x"
 - "1.11.x"
 - tip
+
+env:
+  - GO111MODULES=on
 
 git:
   depth: 1
@@ -21,7 +22,7 @@ install:
 - make tools
 
 script:
-#- make lint
+- make lint
 - test "${TRAVIS_PULL_REQUEST}" != "false" && make test || echo "skipping test"
 - test "${TRAVIS_PULL_REQUEST}" = "false" && make testacc || echo "skipping testacc"
 - make vendor-status
