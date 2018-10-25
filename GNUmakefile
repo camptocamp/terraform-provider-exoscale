@@ -28,12 +28,11 @@ fmtcheck:
 
 lint:
 	@echo "==> Checking source code against linters..."
-	@gometalinter ./$(PKG_NAME)
+	@golangci-lint run ./$(PKG_NAME)
 
 tools:
 	go get -u github.com/golang/dep/cmd/dep
-	go get -u github.com/alecthomas/gometalinter
-	gometalinter --install
+	go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
 
 errcheck:
 	@sh -c "'$(CURDIR)/scripts/errcheck.sh'"
