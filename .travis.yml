@@ -8,7 +8,7 @@ go:
 - tip
 
 env:
-  - GO111MODULES=on
+  - GO111MODULE=on
 
 git:
   depth: 1

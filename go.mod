@@ -8,7 +8,7 @@ require (
 	github.com/aws/aws-sdk-go v1.15.23 // indirect
 	github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d // indirect
 	github.com/blang/semver v3.5.1+incompatible // indirect
-	github.com/exoscale/egoscale v0.11.6
+	github.com/exoscale/egoscale v0.12.2
 	github.com/go-ini/ini v1.38.2 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b // indirect
 	github.com/golang/protobuf v1.2.0 // indirect
