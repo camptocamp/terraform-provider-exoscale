@@ -50,7 +50,7 @@ github.com/davecgh/go-spew/spew
 github.com/exoscale/egoscale
 # github.com/fatih/color v1.7.0
 github.com/fatih/color
-# github.com/go-ini/ini v1.38.2
+# github.com/go-ini/ini v1.39.0 => gopkg.in/ini.v1 v1.39.0
 github.com/go-ini/ini
 # github.com/golang/protobuf v1.2.0
 github.com/golang/protobuf/proto
@@ -233,5 +233,3 @@ google.golang.org/grpc/stats
 google.golang.org/grpc/status
 google.golang.org/grpc/tap
 google.golang.org/grpc/balancer/base
-# gopkg.in/ini.v1 v1.39.0
-gopkg.in/ini.v1
